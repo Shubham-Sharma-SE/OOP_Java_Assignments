@@ -1,28 +1,35 @@
-class Restaurant {
-    String restaurantName;
-    long restaurantContact;
-    String restaurantAddress;
-    float rating;
+class Order {
 
-    void displayRestaurantDetails() {
-        System.out.println("Restaurant Details");
-        System.out.println("Restaurant Name: " + restaurantName);
-        System.out.println("Restaurant Contact: " + restaurantContact);
-        System.out.println("Restaurant Address: " + restaurantAddress);
-        System.out.println("Restaurant Rating: " + rating);
+    int orderId;
+    String orderedFoods;
+    String status;
+
+    Order() {
+        status = "Ordered";
+    }
+
+    Order(int orderId, String orderedFoods) {
+        this.orderId = orderId;
+        this.orderedFoods = orderedFoods;
+        status = "Ordered";
+    }
+
+    void displayOrderDetails() {
+        System.out.println("Order ID: " + orderId);
+        System.out.println("Ordered Foods: " + orderedFoods);
+        System.out.println("Status: " + status);
     }
 }
 
 public class Tester {
     public static void main(String[] args) {
 
-        Restaurant r = new Restaurant();
+        Order o1 = new Order();
+        System.out.println("Order 1:");
+        System.out.println("Status: " + o1.status);
 
-        r.restaurantName = "Domino's";
-        r.restaurantContact = 9988567647L;
-        r.restaurantAddress = "Pune";
-        r.rating = 4.5f;
-
-        r.displayRestaurantDetails();
+        Order o2 = new Order(1001, "Pizza, Burger");
+        System.out.println("Order 2:");
+        o2.displayOrderDetails();
     }
 }
